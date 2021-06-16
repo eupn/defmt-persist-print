@@ -75,7 +75,7 @@ Output example:
 
 ## Credits
 
-This tool is based on [Knurling]()'s [`probe-run`](https://github.com/knurling-rs/probe-run).
+This tool is based on [Knurling](https://github.com/knurling-rs)'s [`probe-run`](https://github.com/knurling-rs/probe-run).
 
 ## License
 
