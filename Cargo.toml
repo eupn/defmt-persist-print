@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 name = "defmt-print"
 readme = "README.md"
 repository = "https://github.com/eupn/defmt-print"
-version = "0.1.0"
+version = "0.1.1"
 
 [dependencies]
 addr2line = "0.14.1"
@@ -27,8 +27,8 @@ probe-rs = "0.10.1"
 rustc-demangle = "0.1.19"
 structopt = "0.3.21"
 embedded-storage = { git = "https://github.com/rust-embedded-community/embedded-storage" }
-cobs = "0.1.4"
-defmt-persist = { git = "https://github.com/BlackbirdHQ/defmt-persist.git" }
+rzcobs = "0.1.2"
+defmt-persist = { git = "https://github.com/eupn/defmt-persist.git", branch = "rzcobs" }
 
 [dev-dependencies]
 insta = "1.7"

@@ -164,12 +164,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cobs"
-version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c44be444fc7959957b0f331d596bafcfbbe30cbdf41665d1c40c68eda24137f6"
-
-[[package]]
 name = "colored"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -309,26 +303,24 @@ checksum = "fc63e313e87db4666440753288012024f117065b52e9b9f4d0d869e9fada6404"
 [[package]]
 name = "defmt-persist"
 version = "0.1.0"
-source = "git+https://github.com/BlackbirdHQ/defmt-persist.git#bf161d6553c40287d187b307db994dc83e25b5b4"
 dependencies = [
  "bbqueue",
- "cobs",
  "cortex-m 0.6.7",
  "crc",
  "defmt",
  "embedded-hal 1.0.0-alpha.4",
  "embedded-storage",
- "nb 0.1.3",
+ "nb 1.0.0",
+ "rzcobs",
 ]
 
 [[package]]
 name = "defmt-print"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "addr2line",
  "ansi_term 0.12.1",
  "anyhow",
- "cobs",
  "colored",
  "defmt-decoder",
  "defmt-persist",
@@ -345,6 +337,7 @@ dependencies = [
  "probe-rs",
  "rstest",
  "rustc-demangle",
+ "rzcobs",
  "structopt",
 ]
 
@@ -934,6 +927,12 @@ name = "ryu"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "71d301d4193d031abdd79ff7e3dd721168a9572ef3fe51a1517aba235bd8f86e"
+
+[[package]]
+name = "rzcobs"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2af5759e4bc4858ce928073d0ebe29c82d18c04a0023bf2f312500a412f23939"
 
 [[package]]
 name = "scroll"

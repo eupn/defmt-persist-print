@@ -120,15 +120,15 @@ fn decode_and_print_defmt_logs(
     current_dir: &Path,
     opts: &cli::Opts,
 ) -> Result<(), anyhow::Error> {
-    let mut frame_buf = [0u8; BUF_LEN];
+    for b in buffer.iter_mut() {
+        *b ^= 0xFF;
+    }
 
-    for buf in buffer.split_mut(|b| *b == 0xFF).filter(|f| f.len() > 1) {
-        let len = cobs::decode_with_sentinel(buf, &mut frame_buf, 0xFF);
+    for buf in buffer.split_mut(|b| *b == 0x00).filter(|f| !f.is_empty()) {
+        let frame_buf = rzcobs::decode(buf).map_err(|_| anyhow!("malformed rzCOBS frame"));
 
-        if let Ok(len) = len {
-            let buf = &frame_buf[..len];
-
-            match table.decode(buf) {
+        if let Ok(buf) = frame_buf {
+            match table.decode(&buf) {
                 Ok((frame, _)) => {
                     // NOTE(`[]` indexing) all indices in `table` have already been verified to exist in
                     // the `locations` map
