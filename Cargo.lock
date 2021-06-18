@@ -258,12 +258,12 @@ dependencies = [
 
 [[package]]
 name = "defmt"
-version = "0.2.2"
+version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7aba21ce228b4769b8b5b6d2e2ee28c5dcfbe60c46f76b63d88b3a6677c8dc5b"
+checksum = "15fe96f5d208164afa70583ff8f062e7697cbbb0b98e5076fbf8ac6da9edff0f"
 dependencies = [
  "defmt-macros",
- "semver 0.11.0",
+ "semver 1.0.3",
 ]
 
 [[package]]
@@ -309,21 +309,21 @@ checksum = "fc63e313e87db4666440753288012024f117065b52e9b9f4d0d869e9fada6404"
 [[package]]
 name = "defmt-persist"
 version = "0.1.0"
+source = "git+https://github.com/BlackbirdHQ/defmt-persist.git#bf161d6553c40287d187b307db994dc83e25b5b4"
 dependencies = [
  "bbqueue",
  "cobs",
  "cortex-m 0.6.7",
  "crc",
  "defmt",
- "defmt-rtt",
  "embedded-hal 1.0.0-alpha.4",
  "embedded-storage",
- "nb 1.0.0",
+ "nb 0.1.3",
 ]
 
 [[package]]
 name = "defmt-print"
-version = "0.2.3"
+version = "0.1.0"
 dependencies = [
  "addr2line",
  "ansi_term 0.12.1",
@@ -333,7 +333,6 @@ dependencies = [
  "defmt-decoder",
  "defmt-persist",
  "difference",
- "either",
  "embedded-storage",
  "gimli",
  "git-version",
@@ -346,18 +345,7 @@ dependencies = [
  "probe-rs",
  "rstest",
  "rustc-demangle",
- "signal-hook",
  "structopt",
-]
-
-[[package]]
-name = "defmt-rtt"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5dfca43cd6b33d2d9f4db9757101ce1044e9672cd7f412dfcc5c5f772243c3b"
-dependencies = [
- "cortex-m 0.6.7",
- "defmt",
 ]
 
 [[package]]
@@ -377,12 +365,6 @@ name = "dtoa"
 version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56899898ce76aaf4a0f24d914c97ea6ed976d42fec6ad33fcbb0a1103e07b2b0"
-
-[[package]]
-name = "either"
-version = "1.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
 
 [[package]]
 name = "embedded-hal"
@@ -992,6 +974,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "semver"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5f3aac57ee7f3272d8395c6e4f502f434f0e289fcd62876f70daa008c20dcabe"
+
+[[package]]
 name = "semver-parser"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1047,25 +1035,6 @@ dependencies = [
  "linked-hash-map",
  "serde",
  "yaml-rust",
-]
-
-[[package]]
-name = "signal-hook"
-version = "0.3.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef33d6d0cd06e0840fba9985aab098c147e67e05cee14d412d3345ed14ff30ac"
-dependencies = [
- "libc",
- "signal-hook-registry",
-]
-
-[[package]]
-name = "signal-hook-registry"
-version = "1.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16f1d0fef1604ba8f7a073c7e701f213e056707210e9020af4528e0101ce11a6"
-dependencies = [
- "libc",
 ]
 
 [[package]]
