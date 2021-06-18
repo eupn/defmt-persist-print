@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 name = "defmt-print"
 readme = "README.md"
 repository = "https://github.com/eupn/defmt-print"
-version = "0.1.0"
+version = "0.1.1"
 
 [dependencies]
 addr2line = "0.14.1"
@@ -17,7 +17,6 @@ anyhow = "1.0.40"
 colored = "2.0.0"
 defmt-decoder = { version = "=0.2.1", features = ['unstable'] }
 difference = "2.0.0"
-either = "1.6.1"
 gimli = "0.23.0"
 git-version = "0.3.4"
 hidapi = "1.2.6"
@@ -26,16 +25,10 @@ log = "0.4.14"
 object = "0.22.0"
 probe-rs = "0.10.1"
 rustc-demangle = "0.1.19"
-signal-hook = "0.3.8"
 structopt = "0.3.21"
 embedded-storage = { git = "https://github.com/rust-embedded-community/embedded-storage" }
-cobs = "0.1.4"
-
-[dependencies.defmt-persist]
-#git = "https://github.com/eupn/defmt-persist.git"
-#branch = "chore/update-defmt"
-features = ["rtt"]
-path = "../defmt-persist"
+rzcobs = "0.1.2"
+defmt-persist = { git = "https://github.com/eupn/defmt-persist.git", branch = "rzcobs" }
 
 [dev-dependencies]
 insta = "1.7"
