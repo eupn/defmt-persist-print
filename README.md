@@ -1,10 +1,10 @@
-# `defmt-print`
+# `defmt-persist-print`
 
-> Prints [`defmt`] logs saved by [`defmt-persist`].
+> A version of [`defmt-print`] that prints [`defmt`] logs saved by [`defmt-persist`] by supporting its framing encoding.
 
 ### Usage
 
-Use `probe-rs-cli` to read a dump of persisted logs from the device and then pass them to `defmt-log-print`.
+Use `probe-rs-cli` to read a dump of persisted logs from the device and then pass them to `defmt-persist-print`.
 
 1. Install `probe-rs-cli`:
 
@@ -25,7 +25,7 @@ export ELF_PATH=/path/to/the/binary.elf
 export LOGS_FLASH_BASE_ADDR=08040000
 export LOGS_FLASH_SIZE_BYTES=4096
 export CHIP_NAME=STM32WB55CGUx
-probe-rs-cli dump --chip $CHIP_NAME $LOGS_FLASH_BASE_ADDR $LOGS_FLASH_SIZE_BYTES | defmt-print $ELF_PATH
+probe-rs-cli dump --chip $CHIP_NAME $LOGS_FLASH_BASE_ADDR $LOGS_FLASH_SIZE_BYTES | defmt-persist-print $ELF_PATH
 ```
 
 ### How It Works
@@ -72,10 +72,11 @@ Output example:
 
 [`defmt-persist`]: https://github.com/BlackbirdHQ/defmt-persist
 [`defmt`]: https://github.com/knurling-rs/defmt
+[`defmt-print`]: https://github.com/knurling-rs/defmt/tree/main/print
 
 ## Credits
 
-This tool is based on [Knurling](https://github.com/knurling-rs)'s [`probe-run`](https://github.com/knurling-rs/probe-run).
+This tool is based on [Knurling](https://github.com/knurling-rs)'s [`defmt-print`].
 
 ## License
 

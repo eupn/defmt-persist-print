@@ -5,9 +5,9 @@ description = "Runs embedded programs just like native ones"
 edition = "2018"
 keywords = ["defmt"]
 license = "MIT OR Apache-2.0"
-name = "defmt-print"
+name = "defmt-persist-print"
 readme = "README.md"
-repository = "https://github.com/eupn/defmt-print"
+repository = "https://github.com/eupn/defmt-persist-print"
 version = "0.1.0"
 
 [dependencies]
